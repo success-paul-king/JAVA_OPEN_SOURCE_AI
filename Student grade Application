@@ -1,0 +1,99 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class StudentGradesApp {
+    private static HashMap<String, Double> studentGrades = new HashMap<>();
+
+    // Method to add a new student
+    public static void addStudent(String name, double grade) {
+        if (studentGrades.containsKey(name)) {
+            System.out.println("Student already exists.");
+        } else {
+            studentGrades.put(name, grade);
+            System.out.println("Student added successfully.");
+        }
+    }
+
+    // Method to update an existing student’s grade
+    public static void updateGrade(String name, double newGrade) {
+        if (studentGrades.containsKey(name)) {
+            studentGrades.put(name, newGrade);
+            System.out.println("Grade updated successfully.");
+        } else {
+            System.out.println("Student not found.");
+        }
+    }
+
+    // Method to view all student records
+    public static void viewAllRecords() {
+        if (studentGrades.isEmpty()) {
+            System.out.println("No records found.");
+        } else {
+            System.out.println("\n--- Student Records ---");
+            for (String name : studentGrades.keySet()) {
+                System.out.println("Name: " + name + " | Grade: " + studentGrades.get(name));
+            }
+        }
+    }
+
+    // Main method to drive the program
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        System.out.println("=== Student Grades Management System ===");
+
+        while (true) {
+            System.out.println("\nMenu:");
+            System.out.println("1. Add Student");
+            System.out.println("2. Update Grade");
+            System.out.println("3. View All Records");
+            System.out.println("4. Exit");
+            System.out.print("Enter choice: ");
+            choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter student name: ");
+                    String nameToAdd = scanner.nextLine();
+                    System.out.print("Enter grade: ");
+                    double grade = scanner.nextDouble();
+                    addStudent(nameToAdd, grade);
+                    break;
+
+                case 2:
+                    System.out.print("Enter student name: ");
+                    String nameToUpdate = scanner.nextLine();
+                    System.out.print("Enter new grade: ");
+                    double newGrade = scanner.nextDouble();
+                    updateGrade(nameToUpdate, newGrade);
+                    break;
+
+                case 3:
+                    viewAllRecords();
+                    break;
+
+                case 4:
+                    System.out.println("Exiting program. Goodbye!");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Invalid choice. Try again.");
+            }
+        }
+    }
+}
+
+=== Student Grades Management System ===
+
+Menu:
+1. Add Student
+2. Update Grade
+3. View All Records
+4. Exit
+Enter choice: 1
+Enter student name: Vincent
+Enter grade: 88.5
+Student added successfully.
