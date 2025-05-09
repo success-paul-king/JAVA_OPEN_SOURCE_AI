@@ -1,0 +1,19 @@
+class Calculator {
+    // Method with one parameter
+    int add(int a) {
+        return a + 10;
+    }
+
+    // Overloaded method with two parameters
+    int add(int a, int b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println(calc.add(5));       // Output: 15
+        System.out.println(calc.add(5, 10));   // Output: 15
+    }
+}
