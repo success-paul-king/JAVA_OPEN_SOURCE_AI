@@ -1,0 +1,47 @@
+// Base class (Parent class)
+class Person {
+    String name;
+    int age;
+    
+    // Constructor
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    // Method
+    void introduce() {
+        System.out.println("Hi, my name is " + name + " and I am " + age + " years old.");
+    }
+}
+
+// Subclass (Child class) inheriting from Person
+class Teacher extends Person {
+    String subject;
+    
+    // Constructor
+    Teacher(String name, int age, String subject) {
+        super(name, age);  // Calling the parent class constructor
+        this.subject = subject;
+    }
+    
+    // Method specific to Teacher
+    void teach() {
+        System.out.println("I teach " + subject);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object of Teacher (child class)
+        Teacher teacher = new Teacher("Alice", 30, "Math");
+        
+        // Calling methods from both the parent and child class
+        teacher.introduce();  // From Person
+        teacher.teach();      // From Teacher
+    }
+}
+
+Output: Hi, my name is Alice and I am 30 years old.
+I teach Math
+
