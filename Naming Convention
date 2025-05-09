@@ -1,0 +1,25 @@
+class Person {  // Class name in PascalCase
+    // Instance variables in camelCase
+    private String firstName;
+    private String lastName;
+    
+    // Constructor
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    
+    // Method name in camelCase
+    public void displayFullName() {
+        System.out.println("Full Name: " + firstName + " " + lastName);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person("John", "Doe"); // Variable in camelCase
+        person.displayFullName(); // Calling method in camelCase
+    }
+}
+
+Output: Full Name: John Doe
