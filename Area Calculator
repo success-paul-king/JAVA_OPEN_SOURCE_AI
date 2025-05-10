@@ -1,0 +1,34 @@
+public class AreaCalculator {
+
+    // Method to calculate the area of a circle
+    public static double calculateCircleArea(double radius) {
+        return 3.14 * radius * radius;
+    }
+
+    // Method to calculate the area of a rectangle
+    public static double calculateRectangleArea(double length, double width) {
+        return length * width;
+    }
+
+    // Method to calculate the area of a triangle
+    public static double calculateTriangleArea(double base, double height) {
+        return 0.5 * base * height;
+    }
+
+    public static void main(String[] args) {
+        // Use the methods to calculate areas
+        double radius = 5;
+        double circleArea = calculateCircleArea(radius);
+        System.out.println("Area of Circle: " + circleArea);
+        
+        double length = 10;
+        double width = 5;
+        double rectangleArea = calculateRectangleArea(length, width);
+        System.out.println("Area of Rectangle: " + rectangleArea);
+        
+        double base = 6;
+        double height = 4;
+        double triangleArea = calculateTriangleArea(base, height);
+        System.out.println("Area of Triangle: " + triangleArea);
+    }
+}
