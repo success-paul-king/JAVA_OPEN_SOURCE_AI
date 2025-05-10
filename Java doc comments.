@@ -1,0 +1,22 @@
+/**
+ * This method calculates the factorial of a given non-negative integer.
+ * The factorial of a number is the product of all positive integers less than or equal to that number.
+ * For example, the factorial of 5 (denoted as 5!) is 5 * 4 * 3 * 2 * 1 = 120.
+ *
+ * @param n The number for which the factorial is to be calculated. It must be a non-negative integer.
+ * @return The factorial of the given number. If the input is 0, the method returns 1.
+ * @throws IllegalArgumentException If the input number is negative.
+ */
+public int factorial(int n) {
+    if (n < 0) {
+        throw new IllegalArgumentException("Input must be a non-negative integer.");
+    }
+    
+    int result = 1;
+    
+    for (int i = 1; i <= n; i++) {
+        result *= i;  // Multiply result by each integer up to n
+    }
+    
+    return result;
+}
